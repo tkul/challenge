@@ -1,29 +1,32 @@
 body {
     text-align: center;
     font-family: sans-serif;
-    background: url('images/kitchen.jpg');
+    background: url('images/kitchenw.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: #ffffff;
     padding: 20px;
     min-height: 100vh;
+    margin: 200px 0;
 }
 
 header h1 {
-    padding: 10px;
+    padding: 15px;
     border-radius: 20px;
-    backdrop-filter: blur(10px);
     margin-bottom: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); */
 }
 
 #envanter {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(224, 222, 222, 0.15);
     border-radius: 20px;
     padding: 30px;
     max-width: 600px;
     margin: 0 auto;
-    backdrop-filter: transform(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .add-item {
@@ -65,5 +68,16 @@ li {
 
 li:hover {
     background: rgba(192, 177, 177, 0.3);
+    /* transform: scale(1.05); */
+}
+
+li button {
+    background: #ffffff;
+    color: #ffffff;
+    border: unset;
+    border-radius: 20px;    
+    float: right;
+}
+li button:hover {
     transform: scale(1.05);
 }

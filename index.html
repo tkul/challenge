@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remy's Kitchen</title>
+    <title> Remy's Kitchen</title>
+    <link rel="icon" type="image/x-icon" href="images/remy.png">
     <link rel="stylesheet" href="sytle.css">
 </head>
+
 <body>
     <header>
         <h1>Welcome Remy's Kitchen!</h1>
@@ -18,11 +21,18 @@
         <input type="text" id="item-input" placeholder="Add a new item...">
         <button id="add-item-button">Add Item</button>
     </div>
-
     <ul id="item-list">
-        <li>🍆 Aubergine</li>
-        <li>🧅 Onion</li>
+        <li>
+            <span>Aubergine</span>
+            <button class="delete-button">❌</button>
+        </li>
+        <li>
+            <span>Tomato</span>
+            <button class="delete-button">❌</button>
+        </li>
+
     </ul>
 </div>
 <script src="script.js"></script>
+
 </html>
