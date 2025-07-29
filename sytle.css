@@ -92,3 +92,15 @@ li button {
 li button:hover {
     transform: scale(1.05);
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #ffffff;
+    padding: 10px;
+}
+
+footer img:hover {
+    transform: scale(1.2);
+}
