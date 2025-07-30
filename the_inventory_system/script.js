@@ -7,7 +7,7 @@ const itemList = ["Aubergine", "Tomato", "Zucchini", "Thyme"]
 function renderItems() {
     let str = '';
     for (i = 0; i < itemList.length; i++) {
-        str = str + '<li>' + '<span>' + itemList[i] + '</span>' + '<button onclick="removeItem(this)" class="delete-button">❌</button>';
+        str = str + '<li> <span>' + itemList[i] + '</span>' + '<button onclick="removeItem(this)" class="delete-button">❌</button> </li>';
         // console.log(itemList[i]);
     }
     ul.innerHTML = str;
@@ -26,6 +26,11 @@ function addItem() {
         alert('Please enter a valid item name.');
         return;
     }
+
+    if (itemList.includes(itemName)) {
+        alert("This item already exists in the list. You can only add one item!");
+        return;
+    } 
 
     itemList.push(itemName);
     input.value = '';
