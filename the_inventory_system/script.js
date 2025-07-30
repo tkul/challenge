@@ -4,6 +4,20 @@ const ul = document.getElementById("item-list");
 
 const itemList = ["Aubergine", "Tomato", "Zucchini", "Thyme"]
 
+function renderItems() {
+    let str = '';
+    for (i = 0; i < itemList.length; i++) {
+        str = str + '<li>' + '<span>' + itemList[i] + '</span>' + '<button onclick="removeItem(this)" class="delete-button">❌</button>';
+    }
+    ul.innerHTML = str;
+
+}
+
+window.onload = function () {
+    renderItems();
+}
+
+
 function addItem() {
     const itemName = input.value.trim();
 
@@ -19,12 +33,7 @@ function addItem() {
     alert(`Item "${itemName}" added successfully!`);
 
     ul.innerHTML = ''
-
-    let str = '';
-    for (i = 0; i < itemList.length; i++) {
-        str = str + '<li>' + '<span>' + itemList[i] + '</span>' + '<button onclick="removeItem(this)" class="delete-button">❌</button>';
-    }
-    ul.innerHTML = str;
+    renderItems();
 }
 
 function removeItem(button) {
