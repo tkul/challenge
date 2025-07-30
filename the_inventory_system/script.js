@@ -1,6 +1,8 @@
 const addButton = document.getElementById("add-item-button");
 const input = document.getElementById("item-input");
-const itemList = document.getElementById("item-list");
+const ul = document.getElementById("item-list");
+
+const itemList = ["Aubergine", "Tomato", "Zucchini", "Thyme"]
 
 function addItem() {
     const itemName = input.value.trim();
@@ -10,28 +12,27 @@ function addItem() {
         return;
     }
 
-    const newItem = document.createElement('li');
-    newItem.innerHTML = `
-        <span>${itemName}</span>
-        <button onclick="removeItem(this)" class="delete-button">❌</button>
-    `;
-
-    itemList.appendChild(newItem);
-    // sonrasında temizlemen lazım input kısmını 
-    input.value = ''; // basit ve mantıklı bence
+    itemList.push(itemName);
+    input.value = '';
 
     console.log(`Item added: ${itemName}`);
     alert(`Item "${itemName}" added successfully!`);
+
+    ul.innerHTML = ''
+
+    let str = '';
+    for (i = 0; i < itemList.length; i++) {
+        str = str + '<li>' + '<span>' + itemList[i] + '</span>' + '<button onclick="removeItem(this)" class="delete-button">❌</button>';
+    }
+    ul.innerHTML = str;
 }
 
 function removeItem(button) {
     if (confirm('Are you sure?')) {
         button.parentElement.remove();
     }
-    // ilk baştaki itemlardaki butonların çalışmasını ekle
 }
 
 addButton.addEventListener("click", addItem);
 
 
-// localStorage işlemini yap
