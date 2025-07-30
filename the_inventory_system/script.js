@@ -8,6 +8,7 @@ function renderItems() {
     let str = '';
     for (i = 0; i < itemList.length; i++) {
         str = str + '<li>' + '<span>' + itemList[i] + '</span>' + '<button onclick="removeItem(this)" class="delete-button">❌</button>';
+        // console.log(itemList[i]);
     }
     ul.innerHTML = str;
 
@@ -36,12 +37,17 @@ function addItem() {
     renderItems();
 }
 
-function removeItem(button) {
+function removeItem(button) {   
     if (confirm('Are you sure?')) {
         button.parentElement.remove();
     }
 }
 
-addButton.addEventListener("click", addItem);
+input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        addItem();
+    }
+});
 
+addButton.addEventListener("click", addItem);
 
