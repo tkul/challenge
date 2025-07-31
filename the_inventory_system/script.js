@@ -49,9 +49,16 @@ function addItem() {
     }
 }
 
-function removeItem(button) { // broken!!!!
+function removeItem(button) {
     if (confirm('Are you sure?')) {
-        button.parentElement.remove();
+        var itemName = button.parentElement.querySelector('span').textContent;
+        var index = itemList.indexOf(itemName);
+        if (index > -1) {
+            itemList.splice(index, 1);
+            button.parentElement.remove();
+            // console.log(`Removed: ${itemName}`);
+            // console.log(itemList);
+        }
     }
 }
 
