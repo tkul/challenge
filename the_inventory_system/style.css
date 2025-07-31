@@ -104,3 +104,10 @@ footer {
 footer img:hover {
     transform: scale(1.2);
 }
+
+button {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+}

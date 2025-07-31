@@ -15,6 +15,7 @@ function renderItems() {
 
 window.onload = function () {
     renderItems();
+    showmessage();
 }
 
 
@@ -55,11 +56,19 @@ function removeItem(button) {
         var index = itemList.indexOf(itemName);
         if (index > -1) {
             itemList.splice(index, 1);
-            button.parentElement.remove();
+            renderItems();
             // console.log(`Removed: ${itemName}`);
             // console.log(itemList);
         }
     }
+}
+
+function showmessage() {
+    var buttonpng = document.querySelector('button[type="submit"]');
+    buttonpng.addEventListener('click', function() {
+        alert("Thank you for visiting Remy's Kitchen :)");
+    });
+  
 }
 
 input.addEventListener("keypress", function (event) {
@@ -69,4 +78,3 @@ input.addEventListener("keypress", function (event) {
 });
 
 addButton.addEventListener("click", addItem);
-
