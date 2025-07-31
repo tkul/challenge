@@ -11,7 +11,6 @@ function renderItems() {
         // console.log(itemList[i]);
     }
     ul.innerHTML = str;
-
 }
 
 window.onload = function () {
@@ -20,6 +19,7 @@ window.onload = function () {
 
 
 function addItem() {
+    const MAX_CAPACITY = 10;
     const itemName = input.value.trim();
 
     if (itemName === '') {
@@ -28,27 +28,34 @@ function addItem() {
     }
 
     if (itemList.includes(itemName)) {
-        alert("This item already exists in the list. You can only add one item!");
+        alert("This item already exists in the list.");
         return;
-    } 
+    }
 
-    itemList.push(itemName);
-    input.value = '';
+    if (itemList.length < MAX_CAPACITY) {
 
-    console.log(`Item added: ${itemName}`);
-    alert(`Item "${itemName}" added successfully!`);
+        itemList.push(itemName);
+        input.value = '';
 
-    ul.innerHTML = ''
-    renderItems();
+        console.log(`Item added: ${itemName}`);
+        alert(`Item "${itemName}" added successfully!`);
+
+        ul.innerHTML = ''
+        renderItems();
+    }
+    else {
+        alert("Inventory is full!");        
+        return;
+    }
 }
 
-function removeItem(button) {   
+function removeItem(button) { // broken!!!!
     if (confirm('Are you sure?')) {
         button.parentElement.remove();
     }
 }
 
-input.addEventListener("keypress", function(event) {
+input.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         addItem();
     }
