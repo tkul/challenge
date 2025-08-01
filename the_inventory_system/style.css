@@ -4,6 +4,18 @@
     margin: 0;
 }
 
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 body {
     text-align: center;
     font-family: sans-serif;
@@ -18,23 +30,8 @@ body {
     gap: 64px;
 }
 
-@keyframes fadeInSlide {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 header h1 {
     animation: fadeInSlide 1.5s;
-    /* border-radius: 20px; 
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); */
 }
 
 #envanter {
@@ -42,10 +39,8 @@ header h1 {
     border-radius: 20px;
     margin: auto;
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
-
 
 .add-item input {
     padding: 10px;
@@ -56,10 +51,11 @@ header h1 {
 .add-item button {
     padding: 10px 20px;
     background: #4b0202;
-    color: #ffffff; 
+    color: #ffffff;
     border-radius: 20px;
     font-size: 16px;
 }
+
 .add-item button:hover {
     transform: scale(1.05);
     background: #360101;
@@ -78,12 +74,11 @@ li {
 
 li:hover {
     background: rgba(192, 177, 177, 0.3);
-    /* transform: scale(1.05); */
 }
 
 li button {
     background-color: #ffffff;
-    border-radius: 20px;    
+    border-radius: 20px;
     float: right;
 }
 
@@ -92,7 +87,7 @@ li button:hover {
 }
 
 footer {
-    position:fixed;
+    position: fixed;
     bottom: 0;
     right: 0;
     padding: 10px;
@@ -103,10 +98,9 @@ footer img:hover {
 }
 
 button {
-  border: none;
-  cursor: pointer;
-  /* appearance: none; */
-  background-color: inherit;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
 }
 
 h2 {
